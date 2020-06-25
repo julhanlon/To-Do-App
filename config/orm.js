@@ -38,7 +38,6 @@ const editTodo =(obj) => {
             err? reject(err) : resolve({msg: "todo updated"});
         });
     });
-   
 
 };
 

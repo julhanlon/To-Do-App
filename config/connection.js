@@ -13,7 +13,6 @@ if(process.env.JAWSDB_URL){
         user: "root",
         password: password,
         database: "todo_db",
-
 });
 };
 
