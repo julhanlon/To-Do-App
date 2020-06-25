@@ -28,18 +28,18 @@ const deleteTodo = (todoId) => {
     return new Promise((resolve, reject) => {
         connection.query("DELETE FROM todos WHERE ?", [{id: todoId}], (err)=> {
             err? reject(err) : resolve({msg: "todo deleted"});
-        })
-    })
-}
+        });
+    });
+};
 
 const editTodo =(obj) => {
     return new Promise((resolve, reject)=> {
         connection.query("UPDATE todo SET ? WHERE ?", [{text: obj.todoText, completed: obj.todoCompleted}, {id: obj.todoId}], (err) => {
             err? reject(err) : resolve({msg: "todo updated"});
-        })
-    })
+        });
+    });
    
 
-}
+};
 
 module.exports = {seeAllTodos, showTodo, addTodo, deleteTodo, editTodo};
