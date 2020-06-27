@@ -6,6 +6,25 @@ $(document).ready(function () {
       console.log(allTodos);
       renderTodos(allTodos);
     });
+
+$("#submitBtn").on("click", () =>{
+  const todoText = $("#todoText").val();
+  
+  $.ajax({
+    type: "POST",
+    url: "/api",
+    data: {text: todoText},
+  }).then((res) => {
+console.log(res);
+window.location.href = "/";
+  });
+})
+
+const getTodos = () => {
+
+}
+
+
   });
   const renderTodos = (arr) => {
     $("#card-container").html("");
